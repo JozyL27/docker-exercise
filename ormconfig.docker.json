@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "host": "db",
+    "port": 5432,
+    "username": "dunder_mifflin",
+    "database": "blogful",
+    "synchronize": true,
+    "logging": false,
+    "migrations": ["./migrations/*"],
+    "cli": {
+        "migrationsDir": "./migrations"
+    }
+}

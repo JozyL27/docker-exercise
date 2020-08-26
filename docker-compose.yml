@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+    db:
+        container_name: blogful-db
+        image: postgres
+        environment: 
+            POSTGRES_HOST_AUTH_METHOD: trust
+            POSTGRES_USER: dunder_mifflin
+            POSTGRES_DB: blogful
+        volumes: 
+            - ./pgdata:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+    web:
+        image: jozyl27/blogful-api
+        depends_on: 
+            - db
+        ports: 
+            - "8000:8000"
